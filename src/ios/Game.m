@@ -131,7 +131,7 @@
                     if (error != nil) {
                         
                         UIAlertView *alert4 = [[UIAlertView alloc] initWithTitle:@"Alert" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                        [alert4 show];
+                        //[alert4 show];
                         
                         
                         //CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
