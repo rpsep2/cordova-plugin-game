@@ -49,13 +49,19 @@ module.exports = {
 		}, "Game", "submitScore", [leaderboardId, score]);
 	},
 	showLeaderboard: function (leaderboardId) {
+		var self = this;
 		cordova.exec(
 		function (result) {
+			if (self.onShowLeaderboardSucceeded)			
+				self.onShowLeaderboardSucceeded();
 		}, 
 		function (error) {
+			if (self.onShowLeaderboardFailed)			
+				self.onShowLeaderboardFailed();
 		}, "Game", "showLeaderboard", [leaderboardId]);
 	},
 	showLeaderboards: function () {
+		var self = this;
 		cordova.exec(
 		function (result) {
 		}, 
@@ -136,6 +142,8 @@ module.exports = {
 	onLoginFailed: null,	
 	onSubmitScoreSucceeded: null,
 	onSubmitScoreFailed: null,
+	onShowLeaderboardSucceeded: null,
+	onShowLeaderboardFailed: null,
     onGetPlayerScoreSucceeded: null,
     onGetPlayerScoreFailed: null,	
 	onUnlockAchievementSucceeded: null,
